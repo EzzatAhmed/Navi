@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/map"
+        tools:context=".MapsActivity"
+        android:name="com.google.android.gms.maps.SupportMapFragment" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:elevation="10dp"
+        android:background="@drawable/white_border"
+        android:id="@+id/relLayout1"
+        android:visibility="visible">
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:id="@+id/ic_magnify"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ic_magnify"/>
+
+        <AutoCompleteTextView
+            android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
+            android:paddingLeft="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/ic_magnify"
+            android:layout_centerVertical="true"
+            android:textSize="15sp"
+            android:textColor="#000"
+            android:id="@+id/input_search"
+            android:background="@null"
+            android:inputType="textAutoComplete"
+            android:hint="Enter Address, City or Zip Code"
+            android:imeOptions="actionSearch" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:id="@+id/relaDirec"
+        android:background="#c50F0F"
+        android:padding="5dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="your location"
+            android:textColor="#fff"
+            android:textSize="30dp"
+            android:id="@+id/textLoc"
+            />
+        <Button
+            android:layout_marginTop="5dp"
+            android:layout_width="130dp"
+            android:background="@drawable/round"
+            android:padding="5dp"
+            android:drawableLeft="@drawable/ic_direction"
+            android:text="Direction"
+            android:textSize="15dp"
+            android:textColor="#fff"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textLoc"
+            android:id="@+id/directionButn"/>
+
+        <Button
+            android:layout_marginTop="5dp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textLoc"
+            android:layout_toRightOf="@+id/directionButn"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="40dp"
+            android:drawableLeft="@drawable/ic_start"
+            android:background="@drawable/round"
+            android:padding="5dp"
+            android:text="Start"
+            android:textSize="15dp"
+            android:textColor="#fff"/>
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background="#c50F0F"
+        android:padding="5dp"
+        android:id="@+id/relativeStart"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00 Min"
+            android:textColor="#fff"
+            android:textSize="25dp"
+            android:id="@+id/time"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="( 00 KM )"
+            android:textColor="#fff"
+            android:textSize="25dp"
+            android:layout_toRightOf="@+id/time"
+            android:id="@+id/kM"
+            android:layout_marginLeft="10dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fastest route, the usual traffic"
+            android:textColor="#fff"
+            android:textSize="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/time"
+            android:id="@+id/fast"
+            android:layout_marginLeft="10dp"
+            />
+
+        <Button
+            android:layout_marginTop="5dp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_start"
+            android:background="@drawable/round"
+            android:text="Start"
+            android:padding="5dp"
+            android:layout_below="@+id/fast"
+            android:textSize="15dp"
+            android:textColor="#fff"/>
+
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#C50F0F"
+        android:visibility="gone"
+        android:id="@+id/linearLayout">
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/back"
+                android:src="@drawable/ic_back"
+                android:layout_marginRight="5dp"/>
+
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/ic_cyclemap"
+                android:layout_marginRight="5dp"/>
+
+            <AutoCompleteTextView
+                android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
+                android:layout_height="40dp"
+                android:paddingLeft="10dp"
+                android:layout_toRightOf="@+id/ic_magnify"
+                android:layout_centerVertical="true"
+                android:textSize="15sp"
+                android:textColor="#000"
+                android:textColorHint="#000"
+                android:background="@drawable/white_border"
+                android:inputType="none"
+            android:hint="Your Location"
+                android:id="@+id/current"
+            android:imeOptions="actionSearch"
+                android:layout_width="300dp" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/loadmap"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
+
+
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/ic_stat_name"
+                android:layout_marginLeft="45dp"
+                android:layout_marginRight="5dp"/>
+            <AutoCompleteTextView
+                android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
+                android:layout_height="40dp"
+                android:layout_toRightOf="@+id/ic_magnify"
+                android:layout_centerVertical="true"
+                android:textSize="15sp"
+                android:textColor="#000"
+                android:background="@drawable/white_border"
+                android:inputType="none"
+                android:hint="Location Direction"
+                android:textColorHint="#000"
+                android:id="@+id/directionMap"
+                android:imeOptions="actionGo"
+                android:paddingLeft="10dp"
+                android:layout_width="300dp" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_relat"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginBottom="5dp"
+            >
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/ic_car"
+                android:background="@drawable/round"/>
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/ic_walk"
+                android:background="@drawable/rectangle"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:scaleType="centerCrop"
+        android:id="@+id/ic_gps"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/ic_gps" />
+
+</RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
